@@ -7,5 +7,5 @@ steps:
   env: ['PROJECT_ROOT=hello']
 artifacts:
   objects:
-    location: 'gs://[BUCKET_NAME]/'
+    location: 'gs://kingbuck40/'
     paths: ['hello']
