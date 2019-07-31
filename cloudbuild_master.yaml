@@ -1,6 +1,6 @@
 steps:
   # build the container image
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'sql-generator-api', '--image', 'kingproject-221600/hello', '--region', 'us-central1', '--update-env-vars', 'PROJECT_ID=kingproject-221600']
+  args: ['beta', 'run', 'deploy', 'sql-generator-api', '--image', 'kingproject-221600/hello', '--project', 'kingproject4','--region', 'us-central1', '--update-env-vars', 'PROJECT_ID=kingproject-221600']
 images:
 - gcr.io/kingproject-221600/hello
