@@ -1,6 +1,11 @@
 steps:
-  # build the container image
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'sql-generator-api', '--image', 'kingproject-221600/hello', '--region', 'us-central1', '--update-env-vars', 'PROJECT_ID=kingproject-221600']
-images:
-- gcr.io/kingproject-221600/hello
+- name: 'gcr.io/cloud-builders/go'
+  args: ['install', '.']
+  env: ['PROJECT_ROOT=hello']
+- name: 'gcr.io/cloud-builders/go'
+  args: ['build', 'hello']
+  env: ['PROJECT_ROOT=hello']
+artifacts:
+  objects:
+    location: 'gs://[BUCKET_NAME]/'
+    paths: ['hello']
